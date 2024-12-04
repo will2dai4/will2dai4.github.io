@@ -1,0 +1,46 @@
+body {
+    background-color: #03045E;
+    margin: 0;
+}
+
+#showcase {
+    position: absolute;
+    top: 0;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('./images/portfolio\ bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    min-height: 500px;
+    width: 100%;
+}
+
+#showcase h1, #showcase h3 {
+    color: #90E0EF;
+    /* Subtle default glow */
+    text-shadow: 0 0 5px #0096C7, 0 0 10px #0096C7;  
+    margin-left: 80px;
+    cursor: default;
+    transition: text-shadow 0.3s ease;  /* Smooth transition for the glow effect */
+}
+
+#showcase h3 {
+    margin-top: 200px;
+    margin-left: 60px;
+}
+
+.glow {
+    /* Ensure the glow is always present but subtle */
+    text-shadow: 0 0 5px #0096C7, 0 0 10px #0096C7;
+}
+
+.glow-hover {
+    /* Enhanced glow effect on hover */
+    text-shadow: 
+        0 0 20px #ADE8F4, 
+        0 0 30px #ADE8F4, 
+        0 0 40px #ADE8F4, 
+        0 0 50px #ADE8F4;  /* Increase intensity on hover */
+}
