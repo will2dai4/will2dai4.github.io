@@ -1,23 +1,57 @@
 /*
-yellow: 100D11 DFFFBD FDFEB7
-purple: 100D11 F4DAFA 8B73A0
-turqoise: 140D19 488FE3 56CFE1
-turqoise2: 140D19 80FFD8 4EA8DE
-cyberp: 140D19 80FFDB 7400BB
+yellow: 100D11 140D19 DFFFBD FDFEB7
+purple: 100D11 140D19 F4DAFA 8B73A0
+turqoise: 140D19 100D11 488FE3 56CFE1
+turqoise2: 140D19 100D11 80FFD8 4EA8DE
+cyberp: 140D19 100D11 80FFDB 7400BB
 */
 :root {
     --bg-color: #140D19;
+    --bg-color2: #100D11;
     --primary-color: #80FFDB;
     --secondary-color: #7400BB;
 }
 
 body {
+    display: block;
     background-color: var(--bg-color);
     font-family: monospace;
     letter-spacing: 2px;
     min-height: 100vh;
     padding: 0;
     margin: 0;
+}
+
+.content {
+    display: relative;
+}
+
+.sidebar {
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+    width: 300px;
+    background-color: var(--bg-color2);
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    z-index: 100;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, visibility 0s linear 0.2s;
+}
+
+.sidebar.closed {
+    transform: translateX(0);
+    opacity: 1; 
+    visibility: visible;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.sidebar-button {
+    margin: 16px;
+    font-size: 32px;
+    background: none;
+    border: none;
+    color: var(--secondary-color)
 }
 
 .header {
@@ -44,8 +78,8 @@ body {
 
 .intro-head {
     display: inline-block;
-    margin-left: 80px;
-    margin-top: 40px;
+    margin-left: 100px;
+    margin-top: 10px;
     padding: 0;
     font-size: large;
 }
@@ -69,7 +103,7 @@ body {
 
 .university {
     margin-top: 36px;
-    margin-left: 80px;
+    margin-left: 100px;
     padding: 0;
     font-size: medium;
     color: var(--primary-color);
@@ -77,7 +111,7 @@ body {
 
 .tech {
     display: inline-block;
-    margin-left: 80px;
+    margin-left: 100px;
     font-size: small;
     color: var(--secondary-color);
 }
@@ -89,7 +123,7 @@ body {
 }
 
 .links a {
-    margin-left: 80px;
+    margin-left: 100px;
     font-size: large;
     color: var(--secondary-color);
     text-decoration: none;
