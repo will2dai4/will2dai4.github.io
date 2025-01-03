@@ -1,7 +1,21 @@
+/*
+yellow: 100D11 DFFFBD FDFEB7
+purple: 100D11 F4DAFA 8B73A0
+turqoise: 140D19 488FE3 56CFE1
+turqoise2: 140D19 80FFD8 4EA8DE
+cyberp: 140D19 80FFDB 7400BB
+*/
+:root {
+    --bg-color: #140D19;
+    --primary-color: #80FFDB;
+    --secondary-color: #7400BB;
+}
+
 body {
-    background-color: #100D11;
+    background-color: var(--bg-color);
     font-family: monospace;
     letter-spacing: 2px;
+    min-height: 100vh;
     padding: 0;
     margin: 0;
 }
@@ -13,7 +27,7 @@ body {
   
 .header a {
     float: left;
-    color: #DFFFBD;
+    color: var(--secondary-color);
     text-align: center;
     padding: 16px;
     text-decoration: none;
@@ -24,7 +38,7 @@ body {
 }
   
 .header a:hover {
-    color: #FDFF9C; 
+    color: var(--primary-color); 
     text-decoration: underline;
 }
 
@@ -37,13 +51,13 @@ body {
 }
 
 .intro-head h1 {
-    color:#FDFF9C;
+    color: var(--primary-color);
 }
 
 .intro-head-text {
     font-weight: bold;
     border-right: 20px solid;
-    border-color: #DFFFBD;
+    border-color: var(--primary-color);
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
@@ -58,31 +72,57 @@ body {
     margin-left: 80px;
     padding: 0;
     font-size: medium;
-    color:#DFFFBD;
+    color: var(--primary-color);
 }
 
 .tech {
     display: inline-block;
     margin-left: 80px;
-    margin-top: 30px;
     font-size: small;
-    color:#DFFFBD;
+    color: var(--secondary-color);
 }
 
 .links {
-    margin-top: 80px;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 48px;
 }
 
 .links a {
     margin-left: 80px;
     font-size: large;
-    color:#DFFFBD;
+    color: var(--secondary-color);
     text-decoration: none;
 }
 
 .links a:hover {
-    color:#FDFF9C;
+    color: var(--primary-color);
     text-decoration: underline;
+}
+
+.tech ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 16px;
+}
+
+.tech li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px; 
+}
+
+.tech-langs {
+    margin-bottom: 30px;
+    margin-top: 60px;
+}
+
+.other-tech {
+    margin-bottom: 40px;
 }
 
 @keyframes typing {
