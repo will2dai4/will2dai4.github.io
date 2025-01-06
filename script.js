@@ -31,30 +31,64 @@ const colorSchemes = {
     }
 };
 
-function changeColorScheme(schemeName) {
-    const root = document.documentElement;
-    
-    const scheme = colorSchemes[schemeName];
-    
-    if (scheme) {
-        root.style.setProperty('--bg-color', scheme.bgColor);
-        root.style.setProperty('--bg-color2', scheme.bgColor2);
-        root.style.setProperty('--primary-color', scheme.primaryColor);
-        root.style.setProperty('--secondary-color', scheme.secondaryColor);
-    }
-}
-
 function toggleSidebar() {
     document.querySelector(".sidebar").classList.toggle("closed");
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    const schemeButtons = document.querySelectorAll('.color-button');
+function setCookie(name, value, daysToExpire) {
+    const date = new Date();
+    date.setTime(date.getTime() + (daysToExpire * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+function getCookie(name) {
+    const cookieName = name + "=";
+    const cookies = document.cookie.split(';');
     
-    schemeButtons.forEach(button => {
+    for(let cookie of cookies) {
+        while (cookie.charAt(0) === ' ') {
+            cookie = cookie.substring(1);
+        }
+        if (cookie.indexOf(cookieName) === 0) {
+            return cookie.substring(cookieName.length);
+        }
+    }
+    return null;
+}
+
+function changeColor(colorName) {
+    const root = document.documentElement;
+    const color = colorSchemes[colorName];
+    
+    if (color) {
+        root.style.setProperty('--bg-color', color.bgColor);
+        root.style.setProperty('--bg-color2', color.bgColor2);
+        root.style.setProperty('--primary-color', color.primaryColor);
+        root.style.setProperty('--secondary-color', color.secondaryColor);
+        
+        setCookie('preferredColor', colorName, 30);
+    }
+}
+
+function loadSavedColor() {
+    const savedColor = getCookie('preferredColor');
+    
+    if (savedColor && colorSchemes[savedColor]) {
+        changeColor(savedColor);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const colorButtons = document.querySelectorAll('.color-button');
+    
+    colorButtons.forEach(button => {
         button.addEventListener('click', function() {
             const colorName = this.dataset.color;
-            changeColorScheme(colorName);
+            changeColor(colorName);
         });
     });
+    
+    loadSavedColor();
 });
+
