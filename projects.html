@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>William Dai - Projects</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+</head>
+
+<body>
+    <div class="sidebar">
+        <button onclick="toggleSidebar()" class="close-bar-button">&times;</button>
+        <div class="color-buttons">
+            <button class="scheme-button yellow-button" data-scheme="yellow">Yellow</button>
+            <button class="scheme-button purple-button" data-scheme="purple">Purple</button>
+            <button class="scheme-button turquoise-button" data-scheme="turquoise">Turquoise</button>
+            <button class="scheme-button turquoise2-button" data-scheme="turquoise2">Turquoise 2</button>
+            <button class="scheme-button cyberp-button" data-scheme="cyberp">Cyber Purple</button>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="header">
+            <button class="sidebar-button" onclick="toggleSidebar()"><i class="devicon-mithril-plain"></i></button>
+            <a href="contact.html">/contact</a>
+            <a href="projects.html">/projects</a>
+            <a href="experiences.html">/experiences</a>
+            <a href="index.html">/home</a>
+        </div>
+
+        <div class="page-content">
+            <h1 class="section-title">> Projects</h1>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h2>LemonAid</h2>
+                    <h3>React JS, TailwindCSS, Vite</h3>
+                    <p class="date">Aug 2024</p>
+                    <ul>
+                        <li>Developed an environmental app to save money by creating recipes and reminders for expiring
+                            food</li>
+                        <li>Built a user-friendly interface using React.js, TailwindCSS, and Vite for Ignition Hacks
+                            2024</li>
+                        <li>Aimed to reduce food waste and encourage sustainable consumption</li>
+                    </ul>
+                </div>
+                <div class="project-card">
+                    <h2>Molecuwar</h2>
+                    <h3>Godot, Python</h3>
+                    <p class="date">Aug 2024</p>
+                    <ul>
+                        <li>Built a Chemistry-related game with the Godot Engine using OOP and Networking for Hack The
+                            6ix</li>
+                        <li>Designed to teach chemistry and other subjects by "gamifying" education</li>
+                        <li>Expected to lead to more engagement in student education, especially for low-attention-span
+                            students</li>
+                    </ul>
+                </div>
+                <div class="project-card">
+                    <h2>RaiderStrike-Server</h2>
+                    <h3>Java</h3>
+                    <p class="date">Dec 2022 – Jan 2023</p>
+                    <ul>
+                        <li>Designed and implemented a multiplayer shooter game with server-client interactions</li>
+                        <li>Built the game's server independently using sockets and multithreading</li>
+                        <li>Utilized object-oriented programming (OOP) principles throughout development</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
