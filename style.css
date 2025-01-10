@@ -5,6 +5,7 @@ turqoise: 140D19 100D11 488FE3 56CFE1
 turqoise2: 140D19 100D11 80FFD8 4EA8DE
 cyberp: 140D19 100D11 80FFDB 7400BB
 */
+
 :root {
     --bg-color: #140D19;
     --bg-color2: #100D11;
@@ -304,6 +305,16 @@ body {
 .page-content {
     margin: 60px 100px;
     color: var(--primary-color);
+}
+
+.project-card, .experience-card {
+    width: 50%;
+    margin-bottom: 10px;
+    padding-left: 16px;
+    border: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: var(--primary-color);
 }
 
 @media screen and (max-width: 768px) {
