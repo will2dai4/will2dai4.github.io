@@ -116,31 +116,6 @@ body {
     transform: scale(1.1);
 }
 
-.yellow-button {
-    border-color: #FDFEB7;
-    color: #DFFFBD;
-}
-
-.purple-button {
-    border-color: #8B73A0;
-    color: #F4DAFA;
-}
-
-.turquoise-button {
-    border-color: #56CFE1;
-    color: #488FE3;
-}
-
-.turquoise2-button {
-    border-color: #4EA8DE;
-    color: #80FFD8;
-}
-
-.cyberpunk-button {
-    border-color: #7400BB;
-    color: #80FFDB;
-}
-
 .header {
     overflow: hidden;
     padding: 0;

@@ -1,15 +1,33 @@
 const colorSchemes = {
-    yellow: {
-        bgColor: '#100D11',
-        bgColor2: '#140D19',
-        primaryColor: '#DFFFBD',
-        secondaryColor: '#FDFEB7'
+    cottoncandy: {
+        bgColor: '#CDB4DB',
+        bgColor2: '#FFAFCC',
+        primaryColor: '#BDE0FE',
+        secondaryColor: '#A2D2FF'
+    },
+    cyberpunk: {
+        bgColor: '#140D19',
+        bgColor2: '#100D11',
+        primaryColor: '#80FFDB',
+        secondaryColor: '#7400BB'
+    },
+    evergreen: {
+        bgColor: '#168AAD',
+        bgColor2: '#34A0A4',
+        primaryColor: '#99D98C',
+        secondaryColor: '#52B69A'
     },
     purple: {
         bgColor: '#100D11',
         bgColor2: '#140D19',
         primaryColor: '#F4DAFA',
         secondaryColor: '#8B73A0'
+    },
+    racer: {
+        bgColor: '#14213D',
+        bgColor2: '#000000',
+        primaryColor: '#E5E5E5',
+        secondaryColor: '#FCA311'
     },
     turquoise: {
         bgColor: '#140D19',
@@ -23,11 +41,11 @@ const colorSchemes = {
         primaryColor: '#80FFD8',
         secondaryColor: '#4EA8DE'
     },
-    cyberpunk: {
-        bgColor: '#140D19',
-        bgColor2: '#100D11',
-        primaryColor: '#80FFDB',
-        secondaryColor: '#7400BB'
+    yellow: {
+        bgColor: '#100D11',
+        bgColor2: '#140D19',
+        primaryColor: '#DFFFBD',
+        secondaryColor: '#FDFEB7'
     }
 };
 
@@ -45,8 +63,8 @@ function setCookie(name, value, daysToExpire) {
 function getCookie(name) {
     const cookieName = name + "=";
     const cookies = document.cookie.split(';');
-    
-    for(let cookie of cookies) {
+
+    for (let cookie of cookies) {
         while (cookie.charAt(0) === ' ') {
             cookie = cookie.substring(1);
         }
@@ -60,35 +78,35 @@ function getCookie(name) {
 function changeColor(colorName) {
     const root = document.documentElement;
     const color = colorSchemes[colorName];
-    
+
     if (color) {
         root.style.setProperty('--bg-color', color.bgColor);
         root.style.setProperty('--bg-color2', color.bgColor2);
         root.style.setProperty('--primary-color', color.primaryColor);
         root.style.setProperty('--secondary-color', color.secondaryColor);
-        
+
         setCookie('preferredColor', colorName, 30);
     }
 }
 
 function loadSavedColor() {
     const savedColor = getCookie('preferredColor');
-    
+
     if (savedColor && colorSchemes[savedColor]) {
         changeColor(savedColor);
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const colorButtons = document.querySelectorAll('.color-button');
-    
+
     colorButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             const colorName = this.dataset.color;
             changeColor(colorName);
         });
     });
-    
+
     loadSavedColor();
 });
 
