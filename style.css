@@ -1,16 +1,8 @@
-/*
-yellow: 100D11 140D19 DFFFBD FDFEB7
-purple: 100D11 140D19 F4DAFA 8B73A0
-turqoise: 140D19 100D11 488FE3 56CFE1
-turqoise2: 140D19 100D11 80FFD8 4EA8DE
-cyberp: 140D19 100D11 80FFDB 7400BB
-*/
-
 :root {
-    --bg-color: #140D19;
-    --bg-color2: #100D11;
-    --primary-color: #80FFDB;
-    --secondary-color: #7400BB;
+    --bg-color: #14213D;
+    --bg-color2: #000000;
+    --primary-color: #E5E5E5;
+    --secondary-color: #FCA311;
 }
 
 body {
